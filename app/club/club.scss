@@ -1,0 +1,11 @@
+@import "../../variables";
+@import "../../mixins";
+
+.court {
+	background-color: $third-color;
+	color: $text-light;
+}
+
+.btn-primary {
+	@include btn(true);
+}
