@@ -1,0 +1,6 @@
+@import url(../variables.css);
+
+.court {
+	background-color: var(--third-color);
+	color: var(--text-light);
+}

@@ -1,6 +1,5 @@
 "use client";
 
-import "./court.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { Edit } from "@mui/icons-material";
@@ -19,6 +18,7 @@ import Link from "next/link";
 import { Court, SURFACE } from "@/utils/models";
 import { bringCourt } from "@/services/bringData";
 import { updateCourt } from "@/services/updateEntries";
+import { Button } from "@/components/pures/button/Button";
 
 const CourtClubPage = () => {
 	/* TODO: Puedo juntar todos los estados en uno tipo objeto y ahi ir actualizando */
@@ -98,14 +98,14 @@ const CourtClubPage = () => {
 					</RadioGroup>
 				</div>
                 <div className="w-full flex flex-col justify-center items-center gap-2">
-				<button
-					className="btn-primary w-3/4 text-center rounded-lg py-1"
-					onClick={() =>
+				<Button primary
+					extraClass="btn-primary w-3/4 text-center rounded-lg py-1"
+					click={() =>
 						updateCourt(court.id.toString(), { name, surface, illuminated })
 					}
 				>
 					Actualizar cancha
-				</button>
+				</Button>
                 <Link href="/club" className="btn-secondary w-3/4 text-center rounded-lg py-1">Volver atrás</Link>
                 </div>
 			</FormControl>

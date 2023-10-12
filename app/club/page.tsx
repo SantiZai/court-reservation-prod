@@ -1,14 +1,14 @@
 "use client";
 
-import "./club.scss";
-import { bringClubById, bringUserByEmail } from "../services/bringData";
-import { Club, Court, Player } from "../utils/models";
+import "./club.css";
+import { bringClubById, bringUserByEmail } from "@/services/bringData";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Club, Court, User } from "@/utils/models";
 
 const ClubPage = () => {
-	const [user, setUser] = useState({} as Player);
+	const [user, setUser] = useState({} as User);
 	const [club, setClub] = useState({} as Club);
 
 	const { data: session } = useSession();

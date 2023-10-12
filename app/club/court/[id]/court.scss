@@ -1,9 +1,0 @@
-@import "../../../../mixins";
-
-.btn-primary {
-    @include btn(true);
-}
-
-.btn-secondary {
-    @include btn;
-}

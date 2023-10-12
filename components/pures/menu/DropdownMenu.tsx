@@ -53,7 +53,7 @@ const DropdownMenu = ({ handler }: { handler: (isOpen: boolean) => void }) => {
       <div className={`menu ${open && "opened"} w-full h-full p-6`}>
         <ul className="w-full h-full flex flex-col gap-2">
           <div className="w-full flex justify-end">
-            <ArrowBack onClick={toggleMenu} />
+            <ArrowBack onClick={toggleMenu} className="text-gray-100" />
           </div>
           <div className="h-full w-2/3 flex flex-col justify-between">
             <div className="flex flex-col gap-1">
