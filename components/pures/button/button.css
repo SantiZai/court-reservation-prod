@@ -1,0 +1,12 @@
+@import url(../../../app/variables.css);
+
+.primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+  border: 1px solid var(--text-dark);
+}

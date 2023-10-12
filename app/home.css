@@ -1,0 +1,32 @@
+@import url(./variables.css);
+
+.bg-image {
+  background: top right / 75% no-repeat url("../public/bg-1.jpg");
+}
+
+.container-search {
+  box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.3);
+  background: var(--bg-light);
+}
+
+.container-search input {
+  width: 100%;
+  margin: 2px 0px;
+  background-color: var(--bg-light);
+  outline: none;
+}
+
+.manage-courts {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-wrap: balance;
+  font-size: 16px;
+}
+
+.service-question {
+  font-size: 18px;
+}
+
+.points {
+  text-wrap: balance;
+}

@@ -4,7 +4,7 @@ import "./navigation.css"
 import { useEffect, useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import { Link } from "@mui/material";
+import Link from "next/link";
 import { ArrowBack, Menu } from "@mui/icons-material";
 import { User } from "@/utils/models";
 import { userStore } from "@/utils/globalStates";

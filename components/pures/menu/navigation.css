@@ -1,0 +1,30 @@
+@import url(../../../app/variables.css);
+
+.toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.menu {
+  background-color: var(--bg-light);
+  position: fixed;
+  left: -100%;
+  top: 0;
+  transition: 0.3s ease;
+  z-index: 1;
+  border-right: 1px solid var(--primary-color);
+  border-radius: 0px 50% 0px 0px;
+  /* Bloquea el scroll en la nav */
+  touch-action: none;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--primary-color);
+}
+
+.opened {
+  left: 0;
+  transition: 0.3s ease;
+}

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url(./variables.css);
+
+body {
+  background-color: var(--bg-light);
+  touch-action: pan-y;
+}
