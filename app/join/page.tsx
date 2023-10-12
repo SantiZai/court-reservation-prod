@@ -1,12 +1,12 @@
 "use client";
 
-import { bringUserByEmail } from "../services/bringData";
-import { Player } from "../utils/models";
+import { bringUserByEmail } from "@/services/bringData";
+import { User } from "@/utils/models";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 const JoinPage = () => {
-	const [user, setUser] = useState({} as Player);
+	const [user, setUser] = useState({} as User);
 
 	const { data: session } = useSession();
 
