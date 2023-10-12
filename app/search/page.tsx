@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { findCourts } from "../services/searchCourts";
-import { Club, Sport } from "../utils/models";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import "./search.scss";
+import "./search.css";
+import { Club, Sport } from "@/utils/models";
+import { findCourts } from "@/services/searchCourts";
 
 const SearchPage = () => {
 	const [country, setCountry] = useState("");

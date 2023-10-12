@@ -56,6 +56,7 @@ export interface Reservation {
 	id?: number;
 	createdAt?: Date;
 	duration: number;
+	description: string;
 	reservedMonth: string;
 	reservedDay: string;
 	reservedHour: string;

@@ -15,10 +15,10 @@ import {
 	Select,
 	MenuItem,
 } from "@mui/material";
-import { bringCourt } from "../../../services/bringData";
-import { Court, SURFACE } from "../../../utils/models";
-import { updateCourt } from "../../../services/updateEntries";
 import Link from "next/link";
+import { Court, SURFACE } from "@/utils/models";
+import { bringCourt } from "@/services/bringData";
+import { updateCourt } from "@/services/updateEntries";
 
 const CourtClubPage = () => {
 	/* TODO: Puedo juntar todos los estados en uno tipo objeto y ahi ir actualizando */

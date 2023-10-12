@@ -1,9 +1,9 @@
 "use client";
 
-import Timeline from "../components/Timeline";
-import { bringClub, bringCourts } from "../services/bringData";
-import { checkReservations } from "../services/checking";
-import { Court } from "../utils/models";
+import Timeline from "@/components/pures/Timeline";
+import { bringClub, bringCourts } from "@/services/bringData";
+import { checkReservations } from "@/services/checking";
+import { Court } from "@/utils/models";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
