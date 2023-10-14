@@ -1,7 +1,7 @@
 @import url(./variables.css);
 
 .bg-image {
-  background: top right / 75% no-repeat url("../public/bg-1.jpg");
+  background: top right / 75% no-repeat url("../public/bg-1.jpg") !important;
 }
 
 .container-search {
