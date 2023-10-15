@@ -20,7 +20,7 @@ const ClubPage = () => {
 				bringClubById(res.clubAdmin.toString()).then((res) => setClub(res));
 			});
 		}
-	}, [club]);
+	}, []);
 
 	return (
 		<div className="flex flex-col pt-4">

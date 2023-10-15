@@ -1,10 +1,7 @@
-"use client";
-
 import "./home.css";
 import SearchHome from "@/components/containers/SearchHome";
 
 const HomePage = () => {
-  
   return (
     <main>
       <div className="bg-image">
@@ -13,7 +10,9 @@ const HomePage = () => {
         </div>
 
         <div className="flex flex-col p-4">
-          <span className="font-semibold text-5xl [text-wrap:balance]">Reserva tu cancha al instante</span>
+          <span className="font-semibold text-5xl [text-wrap:balance]">
+            Reserva tu cancha al instante
+          </span>
           <span className="[text-wrap:balance]">
             Selecciná entre las opciones disponibles en tu ciudad en tiempo
             real!
@@ -21,7 +20,6 @@ const HomePage = () => {
         </div>
 
         <SearchHome />
-        
       </div>
 
       <div className="manage-courts text-center px-4 py-6 font-semibold">

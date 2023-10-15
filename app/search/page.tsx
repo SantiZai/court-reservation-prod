@@ -38,9 +38,9 @@ const SearchPage = () => {
 				<div className="px-4 mt-4">
 					{clubs.map((club: Club) => {
 						return (
-							<div key={club.id} className="card-club">
+							<div key={club.id} className="card">
 								<Link href={`reservations?club=${club.name}`}>
-									<div className="bg-image flex items-end font-semibold" style={{ backgroundImage: `url(${club.image})`}}>
+									<div className="bg flex items-end font-semibold" style={{ backgroundImage: `url(${club.image})`}}>
 										<span className="p-2 text-lg">{club.name}</span>
 									</div>
 									<div className="flex p-2 font-bold text-sm">

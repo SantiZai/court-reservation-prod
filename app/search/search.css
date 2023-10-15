@@ -1,12 +1,12 @@
 @import url(../variables.css);
 
-.card-club {
+.card {
     background-color: var(--third-color);
     color: var(--text-light);
     border-radius: 10px;
 }
 
-.bg-image {
+.bg {
     width: 100%;
     height: 7rem;
     border-radius: 10px;
