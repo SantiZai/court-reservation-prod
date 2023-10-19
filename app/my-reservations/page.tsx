@@ -23,8 +23,13 @@ const MyReservationsPage = () => {
                 {reservations.map((reservation: Reservation) => {
                     return (
                         <div key={reservation.id}>
+                            <div className="flex gap-2">
+
                             <span>{reservation.club?.name}</span>
                             <span>{reservation.court?.name}</span>
+                            </div>
+                            <div className="flex gap-2">
+
                             <span>{reservation.duration} minutos</span>
                             <span>
                                 {reservation.reservedDay +
@@ -33,6 +38,7 @@ const MyReservationsPage = () => {
                                     ":" +
                                     reservation.reservedMinutes}
                             </span>
+                            </div>
                         </div>
                     );
                 })}
