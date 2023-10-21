@@ -15,7 +15,7 @@ const MyReservationsPage = () => {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center px-4 py-8">
             <div>
                 <span>Mis reservas</span>
             </div>
