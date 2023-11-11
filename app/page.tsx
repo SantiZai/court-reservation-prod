@@ -1,3 +1,4 @@
+import { Button } from "@/components/pures/button/Button";
 import "./home.css";
 import SearchHome from "@/components/containers/SearchHome";
 
@@ -42,12 +43,12 @@ const HomePage = () => {
           </span>
         </div>
         <div className="flex w-full justify-between">
-          <button className="btn-primary rounded-md px-4 py-2 text-sm">
+          <Button type="primary" extraClass="px-6 py-1 rounded-2xl">
             Funcionalidades
-          </button>
-          <button className="btn-secondary rounded-md px-4 py-2 text-sm">
+          </Button>
+          <Button type="secondary" extraClass="px-6 py-1 rounded-2xl">
             Planes y precios
-          </button>
+          </Button>
         </div>
       </div>
 

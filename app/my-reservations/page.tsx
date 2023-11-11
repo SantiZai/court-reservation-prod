@@ -1,17 +1,32 @@
 "use client";
 
-import { bringPlayerReservations } from "@/services/bringData";
+import { Button } from "@/components/pures/button/Button";
+import {
+    bringClubById,
+    bringCourts,
+    bringPlayerReservations,
+} from "@/services/bringData";
+import { deleteReservation } from "@/services/deleteEntries";
 import { userStore } from "@/utils/globalStates";
-import { Reservation } from "@/utils/models";
+import { Club, Court, Reservation } from "@/utils/models";
 import { useEffect, useState } from "react";
 
 const MyReservationsPage = () => {
     const [reservations, setReservations] = useState([] as Reservation[]);
+    const [club, setClub] = useState({} as Club);
+    const [courts, setCourts] = useState([] as Court[]);
 
     const user = userStore((state: any) => state.user);
 
     useEffect(() => {
-        bringPlayerReservations(user.id).then((res) => setReservations(res));
+        bringPlayerReservations(user.id).then((res) => {
+            console.log(res);
+            bringClubById(res[0].clubId).then((res) => {
+                setClub(res);
+                bringCourts(res.name).then((res) => setCourts(res));
+            });
+            setReservations(res);
+        });
     }, []);
 
     return (
@@ -20,25 +35,31 @@ const MyReservationsPage = () => {
                 <span>Mis reservas</span>
             </div>
             <div>
-                {reservations.map((reservation: Reservation) => {
+                {reservations.map((reservation: Reservation, i: number) => {
                     return (
-                        <div key={reservation.id}>
-                            <div className="flex gap-2">
-
-                            <span>{reservation.club?.name}</span>
-                            <span>{reservation.court?.name}</span>
+                        <div
+                            key={i}
+                            className="flex flex-col gap-2"
+                        >
+                            <div className="flex flex-col">
+                                <span>{club.name}</span>
+                                <span>{courts[i] !== undefined && courts[i].name}</span>
                             </div>
                             <div className="flex gap-2">
-
-                            <span>{reservation.duration} minutos</span>
-                            <span>
-                                {reservation.reservedDay +
-                                    " " +
-                                    reservation.reservedHour +
-                                    ":" +
-                                    reservation.reservedMinutes}
-                            </span>
+                                <span>{reservation.duration} minutos</span>
+                                <span>
+                                    {reservation.reservedDay +
+                                        "/" +
+                                        reservation.reservedMonth +
+                                        " " +
+                                        reservation.reservedHour +
+                                        ":" +
+                                        reservation.reservedMinutes}
+                                </span>
                             </div>
+                            <Button type="danger" extraClass="rounded-2xl" click={() => {
+                                reservation.id && deleteReservation(reservation.id.toString())
+                                }}>Eliminar reserva</Button>
                         </div>
                     );
                 })}

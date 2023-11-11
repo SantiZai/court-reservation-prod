@@ -10,3 +10,9 @@
   color: var(--text-dark);
   border: 1px solid var(--text-dark);
 }
+
+.danger {
+  background-color: red;
+  color: var(--text-light);
+  font-weight: bold;
+}

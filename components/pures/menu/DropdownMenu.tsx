@@ -55,7 +55,7 @@ const DropdownMenu = ({ handler }: { handler: (isOpen: boolean) => void }) => {
                     <div className="w-full flex justify-end">
                         <ArrowBack
                             onClick={toggleMenu}
-                            className="text-gray-100"
+                            className="text-gray-900 font-bold"
                         />
                     </div>
                     <div className="h-full w-2/3 flex flex-col justify-between">
