@@ -50,7 +50,7 @@ const SearchHome = () => {
           href={`search?country=${data.country}&province=${data.province}&city=${data.city}&sport=${data.sport}`}
           className="btn-primary w-full text-center rounded-2xl py-1"
         >
-          <Button primary extraClass="w-full rounded-2xl">
+          <Button type="primary" extraClass="w-full rounded-2xl">
             Buscar cancha
           </Button>
         </Link>

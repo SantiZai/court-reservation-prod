@@ -20,11 +20,11 @@ const MyReservationsPage = () => {
 
     useEffect(() => {
         bringPlayerReservations(user.id).then((res) => {
-            console.log(res);
-            bringClubById(res[0].clubId).then((res) => {
-                setClub(res);
-                bringCourts(res.name).then((res) => setCourts(res));
-            });
+            res[0] !== undefined &&
+                bringClubById(res[0].clubId).then((res) => {
+                    setClub(res);
+                    bringCourts(res.name).then((res) => setCourts(res));
+                });
             setReservations(res);
         });
     }, []);
@@ -43,7 +43,9 @@ const MyReservationsPage = () => {
                         >
                             <div className="flex flex-col">
                                 <span>{club.name}</span>
-                                <span>{courts[i] !== undefined && courts[i].name}</span>
+                                <span>
+                                    {courts[i] !== undefined && courts[i].name}
+                                </span>
                             </div>
                             <div className="flex gap-2">
                                 <span>{reservation.duration} minutos</span>
@@ -57,9 +59,23 @@ const MyReservationsPage = () => {
                                         reservation.reservedMinutes}
                                 </span>
                             </div>
-                            <Button type="danger" extraClass="rounded-2xl" click={() => {
-                                reservation.id && deleteReservation(reservation.id.toString())
-                                }}>Eliminar reserva</Button>
+                            <Button
+                                type="danger"
+                                extraClass="rounded-2xl"
+                                click={() => {
+                                    reservation.id &&
+                                        deleteReservation(
+                                            reservation.id.toString()
+                                        );
+                                    setReservations(
+                                        reservations.filter(
+                                            (res) => res.id !== reservation.id
+                                        )
+                                    );
+                                }}
+                            >
+                                Eliminar reserva
+                            </Button>
                         </div>
                     );
                 })}
