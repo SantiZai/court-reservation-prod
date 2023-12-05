@@ -31,24 +31,23 @@ const MyReservationsPage = () => {
 
     return (
         <div className="flex flex-col justify-center items-center px-4 py-8">
-            <div>
-                <span>Mis reservas</span>
+            <div style={{position:"absolute", top:"15px", right:"15px"}}>
+                <span className="text-2xl">Mis reservas</span>
             </div>
-            <div>
+            <div className="pt-8">
                 {reservations.map((reservation: Reservation, i: number) => {
                     return (
                         <div
                             key={i}
-                            className="flex flex-col gap-2"
+                            className="flex flex-col gap-2 border border-1 border-gray p-4 rounded-md"
                         >
                             <div className="flex flex-col">
-                                <span>{club.name}</span>
+                                <span className="font-bold text-lg">{club.name}</span>
                                 <span>
                                     {courts[i] !== undefined && courts[i].name}
                                 </span>
                             </div>
                             <div className="flex gap-2">
-                                <span>{reservation.duration} minutos</span>
                                 <span>
                                     {reservation.reservedDay +
                                         "/" +
@@ -58,6 +57,7 @@ const MyReservationsPage = () => {
                                         ":" +
                                         reservation.reservedMinutes}
                                 </span>
+                                <span>{reservation.duration} minutos</span>
                             </div>
                             <Button
                                 type="danger"
